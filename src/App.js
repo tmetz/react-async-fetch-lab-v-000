@@ -3,9 +3,14 @@ import React, { Component } from 'react'
 
 class App extends React.Component {
 
+  state = {
+    peopleInSpace: []
+  }
+
   render() {
     return (
       <div>
+        {this.state.peopleInSpace.map(person => person.name)}
       </div>
     )
   }
@@ -14,7 +19,9 @@ class App extends React.Component {
     fetch('http://api.open-notify.org/astros.json')
     .then(response => response.json())
     .then(data => {
-
+      this.setState({
+          peopleInSpace: data.people
+      })
     })
   }
 }
