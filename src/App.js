@@ -14,7 +14,7 @@ class App extends React.Component {
     fetch('')
     .then(response => response.json())
     .then(data => {
-      
+
     })
   }
 }
